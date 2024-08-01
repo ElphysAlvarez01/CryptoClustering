@@ -31,7 +31,7 @@ Verify that the mean of each feature (column) is 0: (ADD IMAGES)
 Verify that the std of each feature (column) is 1: (ADD IMAGES)
 
 
-#### In Step 3, we will create a DataFrame with the scaled data, setting the Coin_id Column as the Index.
+### In Step 3, we will create a DataFrame with the scaled data, setting the Coin_id Column as the Index.
   #### DateFrame of scaled data:
 ![](Module11_images/module11_step3_scalermarketdata.PNG)
 
@@ -57,8 +57,8 @@ for i in k:
 ### In Step 5 we need to Find the Best Value for k Using the Original Scaled DataFrame.
 - During this step, we take the "inertia" list we lopped through in the previous step and create a DataFrame called **elbow_data**. 
 - During this step, you also want to visualize the elbow curve.
-#### K-Means Elbow Curve (ADD IMAGE OF KMEANS ELBOW)
-![](Module11_kmeans_elbowcurve.PNG?raw=true)
+#### K-Means Elbow Curve
+![](Module11_images/Module11_kmeans_elbowcurve.PNG)
   
 - This plots the number of clusters (k) on the x-axis against the inertia on the y-axis.
 - The "Elbow Curve" helps to identify the optimal number of clusters by looking for the "elbow" point where inertia starts to decrease more slowly.
@@ -90,7 +90,7 @@ k_lower = model.predict(scaled_marketdata_df)'
 scaled_marketdata_prediction['Predicted Clusters'] = k_lower'
 ```
 #### Scatter Plot for K-Means Clusters
-![](Module11_step7_scatterplot.PNG?raw=true)
+![](Module11_images/Module11_step7_scatterplot.PNG)
 - **In this scatter plot we set `x="price_change_percentage_24h"` and `y="price_change_percentage_7d"`.**
 
 ## $${\color{blue}Principal \space Component \space Analysis \space (PCA)}$$ 
@@ -107,7 +107,7 @@ PCA_market_scaled = PCA.fit_transform(scaled_marketdata_df)
 - The elbow curve is the same as the K-Means analysis.
     
 #### PCA Elbow Curve 
-![](Module11_pca_elbowcurve.PNG)
+![](Module11_images/Module11_pca_elbowcurve.PNG)
 
 ### Step 10 includes conducting similar steps as the K-Means and Creating a scatter plot 
 - Initializing the K-Means models, fitting, predicting clusters, and adding the predicted clusters to a DF with a new column.
@@ -138,7 +138,7 @@ k_model_copy.plot.scatter(
     colormap='rainbow')
 ```
 #### Scatter Plot visualizing PCA Clusters
-![](Module11_pca_elbowcurve.PNG)
+![](Module11_images/Module11_pca_elbowcurve.PNG)
 
 ### In Step 11, we Transpose the features to retrieve the weights of the principal components }$$ 
 - During this step, we will create a DataFrame called components_weights_pca that transposes the features.
