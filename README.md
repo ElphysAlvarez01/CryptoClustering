@@ -137,10 +137,10 @@ k_model_copy.plot.scatter(
     c=k_model,
     colormap='rainbow')
 ```
-#### Scatter Plot visualizing PCA Clusters
+#### Scatter plot visualizing PCA Clusters
 ![](Module11_images/Module11_pca_elbowcurve.PNG)
 
-### In Step 11, we Transpose the features to retrieve the weights of the principal components }$$ 
+### In Step 11, we transpose the features to retrieve the weights of the principal components.
 - During this step, we will create a DataFrame called components_weights_pca that transposes the features.
 - Each column represents the weight of that feature in each principal component. (ADD IMAGE OF TRANSPOSE)
 ```
