@@ -1,7 +1,7 @@
 # $${\color{blue}Crypto \ Clustering}$$
 Cluster Cryptocurrencies with K-Means, Finding Elbow Curve, and Optimize Clusters with Principal Component Analysis.
 
-### In Step 1, we imported the necessary libraries and loaded data with "coin_id" as the  index column.}
+### In Step 1, we imported the necessary libraries and loaded data with "coin_id" as the  index column.
 - The sci-kit-learn (sklearn) library was used to conduct the KMeans clusters, Principle Component Analysis, and StandardScaler to fit and transform the data.
 ```
 # Import required libraries and dependencies
@@ -13,6 +13,7 @@ from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 
 ```
+![](Module11_images/Module11_Head1.PNG)
 
 ### Step 2 is to Prepare the Data by conducting preprocessing.
 - We need to use **`StandardScaler()` module from sci-kit-learn to normalize the data from the  'market_data_df' DataFrame**.
@@ -21,10 +22,8 @@ import matplotlib.pyplot as plt
 - The **fit_transform() method computes the necessary statistics (mean and standard deviation) on market_data_df** and
 - Then apply the transformation to the data. The result is a NumPy array where each feature has been scaled. 
 
-#### Here is an image of the DataFrame after its preprocessing.   (ADD IMAGES) 
 #### DataFrame after preprocessing:
-
-
+![](Module11_images/Module11_scalerdata.PNG)
 
 #### The next step during the preprocessing is to verify the data:
 Verify that the mean of each feature (column) is 0: (ADD IMAGES)
@@ -33,10 +32,8 @@ Verify that the std of each feature (column) is 1: (ADD IMAGES)
 
 
 #### In Step 3, we will create a DataFrame with the scaled data, setting the Coin_id Column as the Index.
-  (Data Image)
   #### DateFrame of scaled data:
-
-
+![](Module11_images/module11_step3_scalermarketdata.PNG)
 
 ## $${\color{blue}K-Means \space Clustering}$$ 
 
@@ -61,7 +58,7 @@ for i in k:
 - During this step, we take the "inertia" list we lopped through in the previous step and create a DataFrame called **elbow_data**. 
 - During this step, you also want to visualize the elbow curve.
 #### K-Means Elbow Curve (ADD IMAGE OF KMEANS ELBOW)
-
+![](Module11_kmeans_elbowcurve.PNG?raw=true)
   
 - This plots the number of clusters (k) on the x-axis against the inertia on the y-axis.
 - The "Elbow Curve" helps to identify the optimal number of clusters by looking for the "elbow" point where inertia starts to decrease more slowly.
@@ -92,10 +89,9 @@ k_lower = model.predict(scaled_marketdata_df)'
 ```
 scaled_marketdata_prediction['Predicted Clusters'] = k_lower'
 ```
-#### Scatter Plot for K-Means Clusters}
-(ADD IMAGE OF KMEANS CLUSTER HERE)
+#### Scatter Plot for K-Means Clusters
+![](Module11_step7_scatterplot.PNG?raw=true)
 - **In this scatter plot we set `x="price_change_percentage_24h"` and `y="price_change_percentage_7d"`.**
-
 
 ## $${\color{blue}Principal \space Component \space Analysis \space (PCA)}$$ 
 
@@ -111,7 +107,7 @@ PCA_market_scaled = PCA.fit_transform(scaled_marketdata_df)
 - The elbow curve is the same as the K-Means analysis.
     
 #### PCA Elbow Curve 
-(ADD IMAGE HERE OF PCA ELBOW IMAGE)
+![](Module11_pca_elbowcurve.PNG)
 
 ### Step 10 includes conducting similar steps as the K-Means and Creating a scatter plot 
 - Initializing the K-Means models, fitting, predicting clusters, and adding the predicted clusters to a DF with a new column.
@@ -142,7 +138,7 @@ k_model_copy.plot.scatter(
     colormap='rainbow')
 ```
 #### Scatter Plot visualizing PCA Clusters
-(ADD IMAGE HERE)
+![](Module11_pca_elbowcurve.PNG)
 
 ### In Step 11, we Transpose the features to retrieve the weights of the principal components }$$ 
 - During this step, we will create a DataFrame called components_weights_pca that transposes the features.
